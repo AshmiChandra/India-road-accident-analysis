@@ -32,6 +32,6 @@ print(df.dtypes)
 df['s_no'] = pd.to_numeric(df['s_no'],errors='coerce')
 print(df.dtypes)
 
-df = df[df['area'].isin(['Total (All India)', 'Total (States)', 'Total (Cities)'])].reset_index(drop=True)
+df = df[~df['area'].isin(['Total (All India)', 'Total (States)', 'Total (Cities)'])].reset_index(drop=True)
 
 df.to_csv('clean_dataset.csv', index=False)
