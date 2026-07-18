@@ -34,4 +34,4 @@ print(df.dtypes)
 
 df.to_csv('clean_dataset.csv', index=False)
 
-#EDA starts
+df = df[df['area'].isin(['Total (All India)', 'Total (States)', 'Total (Cities)'])].reset_index(drop=True)

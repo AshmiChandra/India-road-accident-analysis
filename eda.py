@@ -7,7 +7,6 @@ df = pd.read_csv('clean_dataset.csv')
 
 print(df.corr(numeric_only=True))
 print(df.describe())
-print(df.sort_values('Total_Cases', ascending=False).head(12))
-print(df.sort_values('Total_Died', ascending=False).head(12))
+print(df.sort_values('Total_Cases', ascending=False).head(13))
 
 #print(df.size)
