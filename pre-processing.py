@@ -3,16 +3,16 @@ import numpy as np
 
 df = pd.read_csv('dataset.csv')
 
-# print(df.head())
-# print(df.info())
-# print(df.describe())
-#print(df.columns)
+print(df.head())
+print(df.info())
+print(df.describe())
+print(df.columns)
 
 # # handling null values
-# print(df.isnull().sum())
+print(df.isnull().sum())
 
 # handling duplicates
-#print(df.duplicated().sum())
+print(df.duplicated().sum())
 
 #renaming
 df.rename(columns={'Sl. No.' : 's_no', 'State/UT/City': 'area', 
@@ -27,3 +27,11 @@ df.rename(columns={'Sl. No.' : 's_no', 'State/UT/City': 'area',
        'Total Traffic Accidents - Died': 'Total_Died'},inplace= True)
 print(df.columns)
 
+#make sure no non numeric vals and covertiung if needed
+print(df.dtypes)
+df['s_no'] = pd.to_numeric(df['s_no'],errors='coerce')
+print(df.dtypes)
+
+df.to_csv('clean_dataset.csv', index=False)
+
+#EDA starts
